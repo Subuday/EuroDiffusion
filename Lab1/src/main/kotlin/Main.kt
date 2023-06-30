@@ -1,6 +1,7 @@
 import java.nio.file.Files
 import java.nio.file.Paths
 
+const val INITIAL_BALANCE = 1_000_000
 fun main(args: Array<String>) {
     val path = Paths.get("./input.txt")
     val lines = Files.readAllLines(path)
@@ -25,7 +26,7 @@ fun main(args: Array<String>) {
                     val city = City(country, Point(x, y))
                     for (c in countries) {
                         if (city.country == c) {
-                            city.taxOffice[c] = Balance(1_000_000)
+                            city.taxOffice[c] = Balance(INITIAL_BALANCE)
                         } else {
                             city.taxOffice[c] = Balance(0)
                         }
