@@ -141,8 +141,7 @@ data class City(val country: Country, val coordinate: Point) {
             for ((c, b) in taxOffice) {
                 val expanses = b.expanses
                 b.amount -= expanses
-                val nb  = neighbor.taxOffice[c]!!
-                nb.amount += expanses
+                neighbor.taxOffice[c]!!.amount += expanses
             }
         }
     }
