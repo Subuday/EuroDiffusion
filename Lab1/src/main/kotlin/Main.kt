@@ -12,6 +12,10 @@ fun main(args: Array<String>) {
 
         val countries = lines.subList(i + 1, i + n + 1).map { countryStr ->
             val countryParts = countryStr.split(" ")
+            require(countryParts[1].toInt() in 0..10)
+            require(countryParts[2].toInt() in 0 ..10)
+            require(countryParts[3].toInt() in 0..10)
+            require(countryParts[4].toInt() in 0..10)
             Country(
                 name = countryParts[0],
                 llc = Point(countryParts[1].toInt(), countryParts[2].toInt()),
