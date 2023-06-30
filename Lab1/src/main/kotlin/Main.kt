@@ -39,6 +39,12 @@ fun main(args: Array<String>) {
         }.associateBy { it.coordinate.hashCode() }
 
         for ((_, city) in cities) {
+            if (city.neighbors.isEmpty()) {
+                throw IllegalStateException("There is island!")
+            }
+        }
+
+        for ((_, city) in cities) {
             val x = city.coordinate.x
             val y = city.coordinate.y
 
